@@ -167,10 +167,12 @@ export default {
   mounted () {
     const selectedHour = this.$refs.hourList.querySelector('.vdatetime-time-picker__item--selected')
     const selectedMinute = this.$refs.minuteList.querySelector('.vdatetime-time-picker__item--selected')
-    const selectedSecond = this.$refs.secondList.querySelector('.vdatetime-time-picker__item--selected')
     this.$refs.hourList.scrollTop = selectedHour ? selectedHour.offsetTop - 250 : 0
     this.$refs.minuteList.scrollTop = selectedMinute ? selectedMinute.offsetTop - 250 : 0
-    this.$refs.secondList.scrollTop = selectedSecond ? selectedSecond.offsetTop - 250 : 0
+    if (this.$refs.secondList) {
+      const selectedSecond = this.$refs.secondList.querySelector('.vdatetime-time-picker__item--selected')
+      this.$refs.secondList.scrollTop = selectedSecond ? selectedSecond.offsetTop - 250 : 0
+    }
   }
 }
 </script>
