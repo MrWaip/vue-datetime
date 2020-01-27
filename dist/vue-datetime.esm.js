@@ -1,6 +1,6 @@
 /*!
  * vue-datetime v1.0.0-beta.11
- * (c) 2019 Mario Juárez
+ * (c) 2020 Mario Juárez
  * Released under the MIT License.
  */
 
@@ -920,7 +920,7 @@ var Datetime = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c
       this.close();
     },
     newPopupDatetime: function newPopupDatetime () {
-      var datetime = DateTime.utc().setZone(this.zone).set({ seconds: 0, milliseconds: 0 });
+      var datetime = DateTime.utc().setZone(this.zone).startOf('day').set({ seconds: 0, milliseconds: 0 });
 
       if (this.popupMinDatetime && datetime < this.popupMinDatetime) {
         datetime = this.popupMinDatetime.set({ seconds: 0, milliseconds: 0 });
